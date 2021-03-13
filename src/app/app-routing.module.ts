@@ -6,6 +6,7 @@ import { ReviewComponent } from './review/review.component';
 const routes: Routes = [
   { path: 'reviews', component: ReviewsComponent },
   { path: 'review/:id', component: ReviewComponent },
+  { path: '', redirectTo: '/reviews', pathMatch: 'full'},
 ];
 
 @NgModule({
