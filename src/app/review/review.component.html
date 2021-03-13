@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{ review.name | uppercase }}</h3>
+        <h4 class="card-subtle">This is a hard coded subtitle - Change this!</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg">
+    <div class="card">
+      <div class="card-body">
+        <p>{{ review.text }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-auto">
+    <div class="card">
+      <div class="card-body">
+        <h5>Author</h5>
+        <h6>{{ review.user }}</h6>
+        <h5>Score:</h5>
+        <h6>
+          <img
+            *ngxRepeat="review.stars; index as iteration"
+            class="img-responsive"
+            src="assets/images/Star_filled.svg"
+          />
+          <img
+            *ngxRepeat="5 - review.stars; index as iteration"
+            class="img-responsive"
+            src="assets/images/Star_empty.svg"
+          />
+        </h6>
+        <h5>Tags:</h5>
+        <h6><span *ngFor="let tag of review.tags">{{ tag }} </span></h6>
+        
+      </div>
+    </div>
+  </div>
+</div>

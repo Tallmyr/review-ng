@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <h1 class="display-5">Tallmyr Reviews</h1>
-  <p class="lead">
-    Look, it's a sample review site! How original!
-  </p>
+  <p class="lead">Look, it's a sample review site! How original!</p>
   <hr class="my-4" />
   <p>
-    This is mainly a test to see if I can code something using split front- and back-end stacks. <br />
-    This page is coded in Angular, and uses a Python FastAPI backend connected to a Mongo Atlas DB.
+    This is mainly a test to see if I can code something using split front- and
+    back-end stacks. <br />
+    This page is coded in Angular, and uses a Python FastAPI backend connected
+    to a Mongo Atlas DB.
   </p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
@@ -18,9 +18,20 @@
         <h5 class="card-title">{{ review.name | uppercase }}</h5>
         <h6 class="card-subtle">{{ review.user }}</h6>
         <p>{{ review.text }}</p>
-        <img *ngxRepeat="review.stars; index as iteration" class="img-responsive" src="assets/images/Star_filled.svg">
-        <img *ngxRepeat="5-review.stars; index as iteration" class="img-responsive" src="assets/images/Star_empty.svg">
-        <p><span *ngFor="let tag of review.tags">{{ tag }} </span></p>
+        <img
+          *ngxRepeat="review.stars; index as iteration"
+          class="img-responsive"
+          src="assets/images/Star_filled.svg"
+        />
+        <img
+          *ngxRepeat="5 - review.stars; index as iteration"
+          class="img-responsive"
+          src="assets/images/Star_empty.svg"
+        />
+        <p>
+          <span *ngFor="let tag of review.tags">{{ tag }} </span>
+        </p>
+        <h5><a routerLink="/review/{{ review.id }}">Read Now</a></h5>
       </div>
     </div>
   </div>

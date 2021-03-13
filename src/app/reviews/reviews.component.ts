@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReviewService, ReviewShort } from '../review.service';
+import { ReviewService} from '../review.service';
 
 @Component({
   selector: 'app-reviews',
@@ -12,7 +12,7 @@ export class ReviewsComponent implements OnInit {
   constructor(private reviewService: ReviewService) {}
 
   ngOnInit() {
-    this.reviewService.getReviews().subscribe((data: ReviewShort) => {
+    this.reviewService.getReviews().subscribe((data) => {
       console.log(data);
       this.reviews = data;
     });
