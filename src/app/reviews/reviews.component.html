@@ -6,7 +6,7 @@
     This is mainly a test to see if I can code something using split front- and
     back-end stacks. <br />
     This page is coded in Angular, and uses a Python FastAPI backend connected
-    to a Mongo Atlas DB.
+    to a Mongo Atlas DB. It sort of works.
   </p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
@@ -31,7 +31,7 @@
         <p>
           <span *ngFor="let tag of review.tags">{{ tag }} </span>
         </p>
-        <h5><a routerLink="/review/{{ review.id }}">Read Now</a></h5>
+        <h5><a routerLink="/review/{{ review.id }}">Read Now!</a></h5>
       </div>
     </div>
   </div>
